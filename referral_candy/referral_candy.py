@@ -31,6 +31,6 @@ def define_endpoint_fn(verb, ep):
                                params=self._add_signature_to(params))
     setattr(ReferralCandy, ep, endpoint_fn)
 
-for verb, endpoints in _API_METHODS.items():
+for verb, endpoints in list(_API_METHODS.items()):
     for ep in endpoints:
         define_endpoint_fn(verb, ep)
